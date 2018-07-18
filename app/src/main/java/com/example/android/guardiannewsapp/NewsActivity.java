@@ -37,7 +37,8 @@ public class NewsActivity extends AppCompatActivity
      * DELETE THIS LATER IF NECESSARY
      */
     private static final String USGS_REQUEST_URL =
-            "https://earthquake.usgs.gov/fdsnws/event/1/query";
+            "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&orderby=time&minmag=3&limit=10";
+           // "https://earthquake.usgs.gov/fdsnws/event/1/query";
 
     //private static final String USGS_REQUEST_URL =
     // "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&orderby=time&minmag=3&limit=10";
