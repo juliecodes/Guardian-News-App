@@ -11,6 +11,7 @@ import android.net.Uri;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -37,8 +38,11 @@ public class NewsActivity extends AppCompatActivity
      * DELETE THIS LATER IF NECESSARY
      */
     private static final String USGS_REQUEST_URL =
-            "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&orderby=time&minmag=3&limit=10";
-           // "https://earthquake.usgs.gov/fdsnws/event/1/query";
+            // "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&orderby=time&minmag=3&limit=10";
+
+
+
+            "https://earthquake.usgs.gov/fdsnws/event/1/query";
 
     //private static final String USGS_REQUEST_URL =
     // "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&orderby=time&minmag=3&limit=10";
