@@ -47,6 +47,10 @@ public class NewsActivity extends AppCompatActivity
     //private static final String USGS_REQUEST_URL =
     // "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&orderby=time&minmag=3&limit=10";
 
+
+    // https://content.guardianapis.com/search?q=arts&pillarName=arts&api-key=e645d915-0452-42bf-8709-535c74471ce5
+
+
     /**
      * Constant value for the news item loader ID. We can choose any integer.
      * This really only comes into play if you're using multiple loaders.
