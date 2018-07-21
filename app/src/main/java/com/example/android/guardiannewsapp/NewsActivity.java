@@ -178,7 +178,9 @@ public class NewsActivity extends AppCompatActivity
         uriBuilder.appendQueryParameter("minmag", minMagnitude);
         uriBuilder.appendQueryParameter("orderby", orderBy);
 
-        return new NewsLoader(this, uriBuilder.toString());
+        // return new NewsLoader(this, uriBuilder.toString());
+
+        return new NewsLoader(this, USGS_REQUEST_URL);
     }
 
     @Override

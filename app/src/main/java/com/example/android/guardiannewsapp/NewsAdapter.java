@@ -135,8 +135,10 @@ public class NewsAdapter extends ArrayAdapter<News> {
         TextView dateView = (TextView) listItemView.findViewById(R.id.date);
         // Format the date string (i.e. "Mar 3, 1984")
         // String formattedDate = formatDate(dateObject);
+
         // Display the date of the current news item in that TextView
         dateView.setText(newsItemDateDay);
+
 
         // Find the TextView with view ID time
         TextView timeView = (TextView) listItemView.findViewById(R.id.time);
@@ -148,6 +150,7 @@ public class NewsAdapter extends ArrayAdapter<News> {
         // Return the list item view that is now showing the appropriate data
         return listItemView;
     }
+
 
 
 

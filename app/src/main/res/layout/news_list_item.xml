@@ -30,7 +30,7 @@
             android:textAllCaps="true"
             android:textColor="@color/textColorEarthquakeDetails"
             android:textSize="12sp"
-            tools:text="30km S of" />
+            tools:text="News Section" />
 
         <TextView
             android:id="@+id/news_title"
@@ -40,7 +40,7 @@
             android:maxLines="2"
             android:textColor="@color/textColorEarthquakeLocation"
             android:textSize="16sp"
-            tools:text="Long placeholder location that should wrap to more than 2 lines of text" />
+            tools:text="Title of news article which is long so that it fills up 2 lines" />
 
     </LinearLayout>
 
@@ -59,7 +59,7 @@
             android:layout_gravity="end"
             android:textColor="@color/textColorEarthquakeDetails"
             android:textSize="12sp"
-            tools:text="Mar 6, 2010" />
+            tools:text="2018-01-22" />
 
         <TextView
             android:id="@+id/time"
@@ -68,7 +68,7 @@
             android:layout_gravity="end"
             android:textColor="@color/textColorEarthquakeDetails"
             android:textSize="12sp"
-            tools:text="3:00 PM" />
+            tools:text="12:00:00" />
 
     </LinearLayout>
 </LinearLayout>
