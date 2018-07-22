@@ -39,7 +39,7 @@ public class NewsActivity extends AppCompatActivity
      */
     private static final String USGS_REQUEST_URL =
 
-            "https://content.guardianapis.com/search?q=arts&pillarName=arts&api-key=e645d915-0452-42bf-8709-535c74471ce5";
+            "https://content.guardianapis.com/search?q=arts&api-key=e645d915-0452-42bf-8709-535c74471ce5";
 
             // "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&orderby=time&minmag=3&limit=10";
 
@@ -170,13 +170,13 @@ public class NewsActivity extends AppCompatActivity
                 getString(R.string.settings_order_by_default)
         );
 
-        Uri baseUri = Uri.parse(USGS_REQUEST_URL);
+        /* Uri baseUri = Uri.parse(USGS_REQUEST_URL);
         Uri.Builder uriBuilder = baseUri.buildUpon();
 
         uriBuilder.appendQueryParameter("format", "geojson");
         uriBuilder.appendQueryParameter("limit", "10");
         uriBuilder.appendQueryParameter("minmag", minMagnitude);
-        uriBuilder.appendQueryParameter("orderby", orderBy);
+        uriBuilder.appendQueryParameter("orderby", orderBy); */
 
         // return new NewsLoader(this, uriBuilder.toString());
 
@@ -212,13 +212,13 @@ public class NewsActivity extends AppCompatActivity
         mAdapter.clear();
     }
 
-    @Override
+    /* @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
-    }
+    } */
 
-    @Override
+    /* @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.action_settings) {
@@ -227,7 +227,7 @@ public class NewsActivity extends AppCompatActivity
             return true;
         }
         return super.onOptionsItemSelected(item);
-    }
+    } */
 }
 
 

@@ -28,7 +28,8 @@ public class NewsAdapter extends ArrayAdapter<News> {
      * The part of the location string from the USGS service that we use to determine
      * whether or not there is a location offset present ("5km N of Cairo, Egypt").
      */
-    private static final String LOCATION_SEPARATOR = " of ";
+
+    // private static final String LOCATION_SEPARATOR = " of ";
 
     /**
      * Constructs a new {@link NewsAdapter}.
@@ -67,52 +68,6 @@ public class NewsAdapter extends ArrayAdapter<News> {
         String[] timeParts = newsItemTimeDraft.split("Z");
         String newsItemTime = timeParts[0];
 
-        // Find the TextView with view ID magnitude
-        // TextView magnitudeView = (TextView) listItemView.findViewById(R.id.magnitude);
-        // Format the magnitude to show 1 decimal place
-        // String formattedMagnitude = formatMagnitude(currentNewsItem.getMagnitude());
-        // Display the magnitude of the current news item in that TextView
-        // magnitudeView.setText(formattedMagnitude);
-
-        // Set the proper background color on the magnitude circle.
-        // Fetch the background from the TextView, which is a GradientDrawable.
-        // GradientDrawable magnitudeCircle = (GradientDrawable) magnitudeView.getBackground();
-        // Get the appropriate background color based on the current news item magnitude
-        // int magnitudeColor = getMagnitudeColor(currentNewsItem.getMagnitude());
-        // Set the color on the magnitude circle
-        // magnitudeCircle.setColor(magnitudeColor);
-
-        // Get the original location string from the News object,
-        // which can be in the format of "5km N of Cairo, Egypt" or "Pacific-Antarctic Ridge".
-        // String originalLocation = currentNewsItem.getLocation();
-
-        // If the original location string (i.e. "5km N of Cairo, Egypt") contains
-        // a primary location (Cairo, Egypt) and a location offset (5km N of that city)
-        // then store the primary location separately from the location offset in 2 Strings,
-        // so they can be displayed in 2 TextViews.
-        /**
-
-        String primaryLocation;
-        String locationOffset;
-
-        // Check whether the originalLocation string contains the " of " text
-        if (originalLocation.contains(LOCATION_SEPARATOR)) {
-            // Split the string into different parts (as an array of Strings)
-            // based on the " of " text. We expect an array of 2 Strings, where
-            // the first String will be "5km N" and the second String will be "Cairo, Egypt".
-            String[] parts = originalLocation.split(LOCATION_SEPARATOR);
-            // Location offset should be "5km N " + " of " --> "5km N of"
-            locationOffset = parts[0] + LOCATION_SEPARATOR;
-            // Primary location should be "Cairo, Egypt"
-            primaryLocation = parts[1];
-        } else {
-            // Otherwise, there is no " of " text in the originalLocation string.
-            // Hence, set the default location offset to say "Near the".
-            locationOffset = getContext().getString(R.string.near_the);
-            // The primary location will be the full location string "Pacific-Antarctic Ridge".
-            primaryLocation = originalLocation;
-        }
-*/
 
         String newsItemTitle = currentNewsItem.getNewsTitle();
 
