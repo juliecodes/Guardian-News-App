@@ -7,17 +7,11 @@ package com.example.android.guardiannewsapp;
  */
 public class News {
 
-    /** Magnitude of the news item */
-    // private double mMagnitude;
-
-
-
-    /** Location of the news item */
-    // private String mLocation;
-
+    /** title of the news item */
     private String mNewsTitle;
+
+    /** section of the news item */
     private String mNewsSection;
-    // private String mNewsAuthor;
 
     /** Time of the news item */
     private String mNewsDate;
@@ -28,41 +22,34 @@ public class News {
     /**
      * Constructs a new {@link News} object.
      *
-     * @param newsTitle is the magnitude (size) of the news item
-     * @param newsSection is the location where the news item happened
-     * // @param newsAuthor
-     * @param newsDate is the time in milliseconds (from the Epoch) when the
-     *                           news item happened
+     * @param newsTitle is the title of the news item
+     * @param newsSection is the section of the news item
+     * @param newsDate is the date when the news item was published
      * @param url is the website URL to find more details about the news item
      */
     public News(String newsTitle, String newsSection, String newsDate, String url) {
         mNewsTitle = newsTitle;
         mNewsSection = newsSection;
-        // mNewsAuthor = newsAuthor;
         mNewsDate = newsDate;
         mUrl = url;
     }
 
     /**
-     * Returns the magnitude of the news item.
+     * Returns the title of the news item.
      */
     public String getNewsTitle() {
         return mNewsTitle;
     }
 
+    /**
+     *  Returns the section of the news item
+     * */
     public String getNewsSection() {
         return mNewsSection;
     }
 
     /**
-     * Returns the location of the news item.
-     */
-    /* public String getNewsAuthor() {
-        return mNewsAuthor;
-    } */
-
-    /**
-     * Returns the time of the news item.
+     * Returns the date of the news item.
      */
     public String getNewsDate() {
         return mNewsDate;

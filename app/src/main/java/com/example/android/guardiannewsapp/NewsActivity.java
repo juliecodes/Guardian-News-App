@@ -30,26 +30,16 @@ public class NewsActivity extends AppCompatActivity
     private static final String LOG_TAG = NewsActivity.class.getName();
 
     /**
-     * URL for news item data from the USGS dataset
+     * URL for news item data from the GUARDIAN dataset
      */
-
-
-    /**
-     * DELETE THIS LATER IF NECESSARY
-     */
-    private static final String USGS_REQUEST_URL =
-
-            "https://content.guardianapis.com/search?q=arts&api-key=e645d915-0452-42bf-8709-535c74471ce5";
-
-            // "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&orderby=time&minmag=3&limit=10";
-
-            // "https://earthquake.usgs.gov/fdsnws/event/1/query";
-
-    //private static final String USGS_REQUEST_URL =
-    // "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&orderby=time&minmag=3&limit=10";
-
 
     // https://content.guardianapis.com/search?q=arts&pillarName=arts&api-key=e645d915-0452-42bf-8709-535c74471ce5
+    // https://content.guardianapis.com/search?q=arts&api-key=e645d915-0452-42bf-8709-535c74471ce5
+
+
+    private static final String GUARDIAN_REQUEST_URL =
+
+            "https://content.guardianapis.com/search?q=arts&api-key=e645d915-0452-42bf-8709-535c74471ce5";
 
 
     /**
@@ -86,11 +76,6 @@ public class NewsActivity extends AppCompatActivity
         // so the list can be populated in the user interface
         newsListView.setAdapter(mAdapter);
 
-        // Obtain a reference to the SharedPreferences file for this app
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
-        // And register to be notified of preference changes
-        // So we know when the user has adjusted the query settings
-        prefs.registerOnSharedPreferenceChangeListener(this);
 
         // Set an item click listener on the ListView, which sends an intent to a web browser
         // to open a website with more information about the selected news item.
@@ -140,47 +125,13 @@ public class NewsActivity extends AppCompatActivity
 
     @Override
     public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
-        if (key.equals(getString(R.string.settings_min_magnitude_key)) ||
-                key.equals(getString(R.string.settings_order_by_key))) {
-            // Clear the ListView as a new query will be kicked off
-            mAdapter.clear();
-
-            // Hide the empty state text view as the loading indicator will be displayed
-            mEmptyStateTextView.setVisibility(View.GONE);
-
-            // Show the loading indicator while new data is being fetched
-            View loadingIndicator = findViewById(R.id.loading_indicator);
-            loadingIndicator.setVisibility(View.VISIBLE);
-
-            // Restart the loader to requery the USGS as the query settings have been updated
-            getLoaderManager().restartLoader(NEWS_LOADER_ID, null, this);
-        }
     }
 
     @Override
     public Loader<List<News>> onCreateLoader(int i, Bundle bundle) {
 
-        SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
-        String minMagnitude = sharedPrefs.getString(
-                getString(R.string.settings_min_magnitude_key),
-                getString(R.string.settings_min_magnitude_default));
 
-        String orderBy = sharedPrefs.getString(
-                getString(R.string.settings_order_by_key),
-                getString(R.string.settings_order_by_default)
-        );
-
-        /* Uri baseUri = Uri.parse(USGS_REQUEST_URL);
-        Uri.Builder uriBuilder = baseUri.buildUpon();
-
-        uriBuilder.appendQueryParameter("format", "geojson");
-        uriBuilder.appendQueryParameter("limit", "10");
-        uriBuilder.appendQueryParameter("minmag", minMagnitude);
-        uriBuilder.appendQueryParameter("orderby", orderBy); */
-
-        // return new NewsLoader(this, uriBuilder.toString());
-
-        return new NewsLoader(this, USGS_REQUEST_URL);
+        return new NewsLoader(this, GUARDIAN_REQUEST_URL);
     }
 
     @Override
@@ -190,21 +141,20 @@ public class NewsActivity extends AppCompatActivity
         loadingIndicator.setVisibility(View.GONE);
 
         // Set empty state text to display "No news found."
-        mEmptyStateTextView.setText(R.string.no_earthquakes);
+        mEmptyStateTextView.setText(R.string.no_news_found);
 
         // Clear the adapter of previous news data
-        //mAdapter.clear();
+        mAdapter.clear();
 
         // If there is a valid list of {@link News}s, then add them to the adapter's
         // data set. This will trigger the ListView to update.
         if (newsItems != null && !newsItems.isEmpty()) {
             mAdapter.addAll(newsItems);
-            //updateUi(newsItems);
+
         }
     }
 
-    private void updateUi(List<News> newsItems) {
-    }
+
 
     @Override
     public void onLoaderReset(Loader<List<News>> loader) {
@@ -212,22 +162,7 @@ public class NewsActivity extends AppCompatActivity
         mAdapter.clear();
     }
 
-    /* @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    } */
 
-    /* @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            Intent settingsIntent = new Intent(this, SettingsActivity.class);
-            startActivity(settingsIntent);
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    } */
 }
 
 
