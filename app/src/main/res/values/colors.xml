@@ -22,6 +22,10 @@
     <!-- Text color for the time of the news item -->
     <color name="textColorNewsTime">#666666</color>
 
+    <!-- Text color for the time of the news item -->
+    <color name="textColorByline">#666666</color>
+
+
     <!-- Color for a news item in the news section 1 -->
     <color name="newsSectionColor1">#c51162</color>
 
@@ -39,5 +43,8 @@
 
     <!-- Color for a news item in the news section 6 -->
     <color name="newsSectionColor6">#C03823</color>
+
+    <!-- Color for a news item in the news section 7 -->
+    <color name="newsSectionColor7">#26a69a</color>
 
 </resources>

@@ -32,7 +32,7 @@ public class NewsActivity extends AppCompatActivity
 
     private static final String GUARDIAN_REQUEST_URL =
 
-            "https://content.guardianapis.com/search?q=arts&api-key=e645d915-0452-42bf-8709-535c74471ce5";
+            "https://content.guardianapis.com/search?q=arts&from-date=2018-05-01&order-by=relevance&show-tags=contributor&api-key=e645d915-0452-42bf-8709-535c74471ce5";
 
 
     /**

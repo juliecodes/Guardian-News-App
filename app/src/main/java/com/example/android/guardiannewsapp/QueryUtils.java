@@ -185,12 +185,27 @@ public final class QueryUtils {
                 // Extract the value for the key called "url"
                 String webUrl = currentNews.getString("webUrl");
 
+                // Go down one more level
+                JSONObject newsTags = currentNews.getJSONObject("tags");
+
+                // get the string for the author
+                String newsItemAuthor = newsTags.getString("webTitle");
+
                 // Create a new {@link News} object with the magnitude, location, time,
                 // and url from the JSON response.
-                News newsItem = new News(webTitle, sectionName, webPublicationDate, webUrl);
+                if (newsItemAuthor !=null) {
+                    News newsItem = new News(webTitle, sectionName, webPublicationDate, webUrl, newsItemAuthor);
+// Add the new {@link News} to the list of news items.
+                    newsItems.add(newsItem);
+                } else {
+                    News newsItem = new News(webTitle, sectionName, webPublicationDate, webUrl);
+// Add the new {@link News} to the list of news items.
+                    newsItems.add(newsItem);
+                }
 
-                // Add the new {@link News} to the list of news items.
-                newsItems.add(newsItem);
+
+
+
             }
 
         } catch (JSONException e) {

@@ -84,6 +84,26 @@ public class NewsAdapter extends ArrayAdapter<News> {
         // Set the color of the news section
         newsSectionTextView.setTextColor(newsSectionCustomColor);
 
+
+        String newsAuthorByline = currentNewsItem.getNewsAuthor();
+        // Find the TextView with view ID news author
+        TextView newsAuthorTextView = (TextView) listItemView.findViewById(R.id.news_byline);
+
+
+if (currentNewsItem.hasAuthor()) {
+
+
+    // Display the author of the current news item in that TextView
+    newsAuthorTextView.setText(newsAuthorByline);
+    // make text view visible
+    newsAuthorTextView.setVisibility(View.VISIBLE);
+
+        } else {
+// make text view not visible
+    newsAuthorTextView.setVisibility(View.GONE);
+}
+
+
         // Find the TextView with view ID date
         TextView dateView = (TextView) listItemView.findViewById(R.id.date);
 
@@ -123,6 +143,10 @@ public class NewsAdapter extends ArrayAdapter<News> {
                 break;
             case "Opinion":
                 newsSectionResourceId = R.color.newsSectionColor6;
+                break;
+
+            case "Stage":
+                newsSectionResourceId = R.color.newsSectionColor7;
                 break;
 
             default:
