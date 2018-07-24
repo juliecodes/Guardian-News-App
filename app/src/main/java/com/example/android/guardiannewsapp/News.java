@@ -1,31 +1,38 @@
 package com.example.android.guardiannewsapp;
 
 
-
 /**
  * An {@link News} object contains information related to a single news item.
  */
 public class News {
 
-    /** title of the news item */
+    /**
+     * title of the news item
+     */
     private String mNewsTitle;
 
-    /** section of the news item */
+    /**
+     * section of the news item
+     */
     private String mNewsSection;
 
-    /** Time of the news item */
+    /**
+     * Time of the news item
+     */
     private String mNewsDate;
 
-    /** Website URL of the news item */
+    /**
+     * Website URL of the news item
+     */
     private String mUrl;
 
     /**
      * Constructs a new {@link News} object.
      *
-     * @param newsTitle is the title of the news item
+     * @param newsTitle   is the title of the news item
      * @param newsSection is the section of the news item
-     * @param newsDate is the date when the news item was published
-     * @param url is the website URL to find more details about the news item
+     * @param newsDate    is the date when the news item was published
+     * @param url         is the website URL to find more details about the news item
      */
     public News(String newsTitle, String newsSection, String newsDate, String url) {
         mNewsTitle = newsTitle;
@@ -42,11 +49,9 @@ public class News {
     }
 
     /**
-     *  Returns the section of the news item
-     * */
-    public String getNewsSection() {
-        return mNewsSection;
-    }
+     * Returns the section of the news item
+     */
+    public String getNewsSection() { return mNewsSection; }
 
     /**
      * Returns the date of the news item.

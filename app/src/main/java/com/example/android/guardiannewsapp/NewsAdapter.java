@@ -57,7 +57,7 @@ public class NewsAdapter extends ArrayAdapter<News> {
 
         String[] dateTimeparts = newsItemDate.split("T");
         // newsItemDateDay should just be the day part of the date
-        String newsItemDateDay = dateTimeparts[0];
+         String newsItemDateDay = dateTimeparts[0];
         // newsItemTimeDraft will include the time part of the date plus the Z
         String newsItemTimeDraft = dateTimeparts[1];
         String[] timeParts = newsItemTimeDraft.split("Z");
@@ -80,6 +80,10 @@ public class NewsAdapter extends ArrayAdapter<News> {
         newsSectionTextView.setText(newsItemSection);
 
 
+        // change the text color of the news section based on the section
+        int newsSectionCustomColor = getNewsSectionColor(currentNewsItem.getNewsSection());
+        // Set the color of the news section
+        newsSectionTextView.setTextColor(newsSectionCustomColor);
 
         // Find the TextView with view ID date
         TextView dateView = (TextView) listItemView.findViewById(R.id.date);
@@ -97,6 +101,39 @@ public class NewsAdapter extends ArrayAdapter<News> {
         // Return the list item view that is now showing the appropriate news data
         return listItemView;
     }
+
+
+    private int getNewsSectionColor(String newsSection) {
+        int newsSectionResourceId;
+        switch (newsSection) {
+
+            case "Art and design":
+                newsSectionResourceId = R.color.newsSectionColor1;
+                break;
+            case "Music":
+                newsSectionResourceId = R.color.newsSectionColor2;
+                break;
+            case "Travel":
+                newsSectionResourceId = R.color.newsSectionColor3;
+                break;
+            case "Culture":
+                newsSectionResourceId = R.color.newsSectionColor4;
+                break;
+            case "Education":
+                newsSectionResourceId = R.color.newsSectionColor5;
+                break;
+            case "Opinion":
+                newsSectionResourceId = R.color.newsSectionColor6;
+                break;
+
+            default:
+                newsSectionResourceId = R.color.textColorNewsSection;
+                break;
+        }
+
+        return ContextCompat.getColor(getContext(), newsSectionResourceId);
+    }
+
 
 
 
