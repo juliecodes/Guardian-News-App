@@ -9,6 +9,10 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import java.util.List;
 
+/**
+ *  Credit for split code.
+ *  https://stackoverflow.com/questions/3481828/how-to-split-a-string-in-java
+ * */
 
 /**
  * An {@link NewsAdapter} knows how to create a list item layout for each news item
