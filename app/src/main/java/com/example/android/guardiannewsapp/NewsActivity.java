@@ -28,8 +28,6 @@ public class NewsActivity extends AppCompatActivity
      * URL for news item data from the GUARDIAN dataset
      */
 
-    // https://content.guardianapis.com/search?q=arts&pillarName=arts&api-key=e645d915-0452-42bf-8709-535c74471ce5
-    // https://content.guardianapis.com/search?q=arts&api-key=e645d915-0452-42bf-8709-535c74471ce5
 
 
     private static final String GUARDIAN_REQUEST_URL =

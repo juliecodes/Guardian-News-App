@@ -4,7 +4,7 @@
     <string name="app_name">GuardianNewsApp</string>
 
 
-    <!-- Text to display in the list when there are no earthquakes [CHAR LIMIT=NONE] -->
+    <!-- Text to display in the list when there is no news [CHAR LIMIT=NONE] -->
     <string name="no_news_found">No news found.</string>
 
     <!-- Error message when there is no internet connectivity [CHAR LIMIT=NONE] -->
