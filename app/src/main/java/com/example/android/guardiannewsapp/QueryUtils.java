@@ -190,20 +190,25 @@ public final class QueryUtils {
                 JSONObject newsItemAuthorObject = newsTags.getJSONObject(0);
                 Log.i("QueryUtils", "newsItemAuthorObject successful");
 
-                 // get the author string
+                /**
+                 * you will need to check if the tags array is empty. if its empty,
+                 * set the author to something like, Unknown Author, or similar
+                 * */
+                String newsItemAuthor = null;
 
-                String newsItemAuthor = newsItemAuthorObject.getString("webTitle");
+                // get the author string
+                newsItemAuthor = newsItemAuthorObject.getString("webTitle");
 
                 // Create a new {@link News} object with the title, section name, date, author,
                 // and url from the JSON response.
-                if (newsItemAuthorObject != null) {
-                    News newsItem = new News(webTitle, sectionName, webPublicationDate, webUrl, newsItemAuthor);
-                    Log.i("QueryUtils", "newsItemAuthor is included");
+                if (newsTags.isNull(0)) {
+                    News newsItem = new News(webTitle, sectionName, webPublicationDate, webUrl);
+                    Log.i("QueryUtils", "newsItemAuthor is NOT included");
 // Add the new {@link News} to the list of news items.
                     newsItems.add(newsItem);
                 } else {
-                    News newsItem = new News(webTitle, sectionName, webPublicationDate, webUrl);
-                    Log.i("QueryUtils", "newsItemAuthor is NOT included");
+                    News newsItem = new News(webTitle, sectionName, webPublicationDate, webUrl, newsItemAuthor);
+                    Log.i("QueryUtils", "newsItemAuthor is included");
 // Add the new {@link News} to the list of news items.
                     newsItems.add(newsItem);
                 }
