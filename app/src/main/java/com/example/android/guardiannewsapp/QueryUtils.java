@@ -186,27 +186,29 @@ public final class QueryUtils {
                 JSONArray newsTags = currentNews.getJSONArray("tags");
                 Log.i("QueryUtils", "tags array successful");
 
-                // get the index for the tags array
-                JSONObject newsItemAuthorObject = newsTags.getJSONObject(0);
-                Log.i("QueryUtils", "newsItemAuthorObject successful");
-
-                /**
-                 * you will need to check if the tags array is empty. if its empty,
-                 * set the author to something like, Unknown Author, or similar
-                 * */
-                String newsItemAuthor = null;
-
-                // get the author string
-                newsItemAuthor = newsItemAuthorObject.getString("webTitle");
+/**
+ * you will need to check if the tags array is empty. if its empty,
+ * set the author to something like, Unknown Author, or similar
+ * */
 
                 // Create a new {@link News} object with the title, section name, date, author,
                 // and url from the JSON response.
                 if (newsTags.isNull(0)) {
+                    String newsItemAuthor = null;
                     News newsItem = new News(webTitle, sectionName, webPublicationDate, webUrl);
                     Log.i("QueryUtils", "newsItemAuthor is NOT included");
 // Add the new {@link News} to the list of news items.
                     newsItems.add(newsItem);
                 } else {
+                    // get the index for the tags array
+                    JSONObject newsItemAuthorObject = newsTags.getJSONObject(0);
+                    Log.i("QueryUtils", "newsItemAuthorObject successful");
+
+
+
+
+                    // get the author string
+                    String newsItemAuthor = newsItemAuthorObject.getString("webTitle");
                     News newsItem = new News(webTitle, sectionName, webPublicationDate, webUrl, newsItemAuthor);
                     Log.i("QueryUtils", "newsItemAuthor is included");
 // Add the new {@link News} to the list of news items.
