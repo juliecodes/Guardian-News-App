@@ -18,7 +18,7 @@ import java.util.List;
 
 
 /**
- * Helper methods related to requesting and receiving news item data from USGS.
+ * Helper methods related to requesting and receiving news item data from Guardian.
  */
 public final class QueryUtils {
 
@@ -36,7 +36,7 @@ public final class QueryUtils {
     }
 
     /**
-     * Query the USGS dataset and return a list of {@link News} objects.
+     * Query the Guardian dataset and return a list of {@link News} objects.
      */
     public static List<News> fetchNewsData(String requestUrl) {
         // Create URL object
@@ -183,7 +183,7 @@ public final class QueryUtils {
                 Log.i("QueryUtils", "tags array successful");
 
                 /**
-                 * check if the tags array is empty. if its empty, set the author to null
+                 * if tags array is empty, set the author to null
                  * */
 
                 // Create a new {@link News} object with the title, section name, date, author,
