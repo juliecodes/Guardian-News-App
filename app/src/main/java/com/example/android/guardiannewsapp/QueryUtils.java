@@ -2,11 +2,9 @@ package com.example.android.guardiannewsapp;
 
 import android.text.TextUtils;
 import android.util.Log;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -159,7 +157,7 @@ public final class QueryUtils {
 
             // Extract the JSONArray associated with the key called "results",
             // which represents a list of news items.
-            JSONArray newsArray = JSONSecondLevel.getJSONArray("results"); // features in earthquake app
+            JSONArray newsArray = JSONSecondLevel.getJSONArray("results"); // same as features in earthquake app
 
             // For each news item in the newsArray, create an {@link News} object
             for (int i = 0; i < newsArray.length(); i++) {
@@ -168,20 +166,19 @@ public final class QueryUtils {
                 JSONObject currentNews = newsArray.getJSONObject(i);
 
 
-                // Extract the value for the key called "mag"
+                // Extract the value for the key called "webTitle"
                 String webTitle = currentNews.getString("webTitle");
 
-                // Extract the value for the key called "place"
+                // Extract the value for the key called "sectionName"
                 String sectionName = currentNews.getString("sectionName");
 
-
-                // Extract the value for the key called "time"
+                // Extract the value for the key called "webPublicationDate"
                 String webPublicationDate = currentNews.getString("webPublicationDate");
 
-                // Extract the value for the key called "url"
+                // Extract the value for the key called "webUrl"
                 String webUrl = currentNews.getString("webUrl");
 
-                // Go down one more level
+                // Go down one more level to the tags array
                 JSONArray newsTags = currentNews.getJSONArray("tags");
                 Log.i("QueryUtils", "tags array successful");
 
@@ -192,9 +189,13 @@ public final class QueryUtils {
                 // Create a new {@link News} object with the title, section name, date, author,
                 // and url from the JSON response.
                 if (newsTags.isNull(0)) {
+                    // set the author to null
                     String newsItemAuthor = null;
+
+                    // create the news item array
                     News newsItem = new News(webTitle, sectionName, webPublicationDate, webUrl);
                     Log.i("QueryUtils", "newsItemAuthor is NOT included");
+
                     // Add the new {@link News} to the list of news items.
                     newsItems.add(newsItem);
                 } else {
@@ -202,9 +203,10 @@ public final class QueryUtils {
                     JSONObject newsItemAuthorObject = newsTags.getJSONObject(0);
                     Log.i("QueryUtils", "newsItemAuthorObject successful");
 
-
                     // get the author string
                     String newsItemAuthor = newsItemAuthorObject.getString("webTitle");
+
+                    // create the news item array
                     News newsItem = new News(webTitle, sectionName, webPublicationDate, webUrl, newsItemAuthor);
                     Log.i("QueryUtils", "newsItemAuthor is included");
                     // Add the new {@link News} to the list of news items.
