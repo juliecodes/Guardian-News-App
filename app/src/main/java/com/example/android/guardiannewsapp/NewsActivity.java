@@ -8,6 +8,7 @@ import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -33,7 +34,8 @@ public class NewsActivity extends AppCompatActivity
 
     private static final String GUARDIAN_REQUEST_URL =
 
-            "https://content.guardianapis.com/search?q=arts&from-date=2018-05-01&order-by=relevance&show-tags=contributor&api-key=e645d915-0452-42bf-8709-535c74471ce5";
+           // "https://content.guardianapis.com/search?q=arts&from-date=2018-05-01&order-by=relevance&show-tags=contributor&api-key=e645d915-0452-42bf-8709-535c74471ce5";
+            "https://content.guardianapis.com/search?q=arts&show-tags=contributor&api-key=e645d915-0452-42bf-8709-535c74471ce5";
 
 
     /**
@@ -121,12 +123,43 @@ public class NewsActivity extends AppCompatActivity
     public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
     }
 
-    @Override
+   /** @Override
     public Loader<List<News>> onCreateLoader(int i, Bundle bundle) {
 
 
         return new NewsLoader(this, GUARDIAN_REQUEST_URL);
     }
+    */
+
+   @Override
+   // onCreateLoader instantiates and returns a new Loader for the given ID
+   public Loader<List<News>> onCreateLoader(int i, Bundle bundle) {
+
+       SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
+
+       // getString retrieves a String value from the preferences. The second parameter is the default value for this preference.
+       String sectionId = sharedPrefs.getString(
+               getString(R.string.settings_news_section_key),
+               getString(R.string.settings_news_section_default_key));
+
+       // parse breaks apart the URI string that's passed into its parameter
+       Uri baseUri = Uri.parse(GUARDIAN_REQUEST_URL);
+
+       // buildUpon prepares the baseUri that we just parsed so we can add query parameters to it
+       Uri.Builder uriBuilder = baseUri.buildUpon();
+
+       // Append query parameter and its value. For example, the `format=geojson`
+
+       uriBuilder.appendQueryParameter("sectionId", sectionId);
+       uriBuilder.appendQueryParameter("order-by", "newest");
+       uriBuilder.appendQueryParameter("order-by", "oldest");
+       uriBuilder.appendQueryParameter("order-by", "relevance");
+
+
+       // Return the completed uri `http://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&limit=10&minmag=minMagnitude&orderby=time
+       return new NewsLoader(this, uriBuilder.toString());
+
+   }
 
     @Override
     public void onLoadFinished(Loader<List<News>> loader, List<News> newsItems) {

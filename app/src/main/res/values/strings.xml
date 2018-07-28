@@ -17,7 +17,7 @@
     <string name="settings_news_section_label">News Section</string>
     <string name="settings_news_section_key" translatable="false">news_section</string>
 
-    <!-- These go in the settings menu that shows each section as options for news section -->
+    <!-- These go in the settings_main menu that shows each section as options for news section -->
     <string name="settings_news_section_default_label">Art and Design</string>
     <string name="settings_news_section_music_label">Music</string>
     <string name="settings_news_section_travel_label">Travel</string>
@@ -26,15 +26,17 @@
     <string name="settings_news_section_opinion_label">Opinion</string>
     <string name="settings_news_section_stage_label">Stage</string>
 
-    <string name="settings_news_section_default_key" translatable="false">news_section_art_and_design</string>
-    <string name="settings_news_section_music_key" translatable="false">news_section_music</string>
-    <string name="settings_news_section_travel_key" translatable="false">news_section_travel</string>
-    <string name="settings_news_section_culture_key" translatable="false">news_section_culture</string>
-    <string name="settings_news_section_education_key" translatable="false">news_section_education</string>
-    <string name="settings_news_section_opinion_key" translatable="false">news_section_opinion</string>
-    <string name="settings_news_section_stage_key" translatable="false">news_section_stage</string>
+    <string name="settings_news_section_default_key" translatable="false">artanddesign</string>
+    <string name="settings_news_section_music_key" translatable="false">music</string>
+    <string name="settings_news_section_travel_key" translatable="false">travel</string>
+    <string name="settings_news_section_culture_key" translatable="false">culture</string>
+    <string name="settings_news_section_education_key" translatable="false">education</string>
+    <string name="settings_news_section_opinion_key" translatable="false">commentisfree</string>
+    <string name="settings_news_section_stage_key" translatable="false">stage</string>
 
-
+    <string name="settings_min_magnitude_label">Minimum Magnitude</string>
+    <string name="settings_min_magnitude_key" translatable="false">min_magnitude</string>
+    <string name="settings_min_magnitude_default" translatable="false">0</string>
 
 
 
