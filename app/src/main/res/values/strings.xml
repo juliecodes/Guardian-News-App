@@ -26,13 +26,13 @@
     <string name="settings_news_section_opinion_label">Opinion</string>
     <string name="settings_news_section_stage_label">Stage</string>
 
-    <string name="settings_news_section_default_value" translatable="false">artanddesign</string>
-    <string name="settings_news_section_music_value" translatable="false">music</string>
-    <string name="settings_news_section_travel_value" translatable="false">travel</string>
-    <string name="settings_news_section_culture_value" translatable="false">culture</string>
-    <string name="settings_news_section_education_value" translatable="false">education</string>
-    <string name="settings_news_section_opinion_value" translatable="false">commentisfree</string>
-    <string name="settings_news_section_stage_value" translatable="false">stage</string>
+    <string name="settings_news_section_default_value" translatable="false">artanddesign/artanddesign</string>
+    <string name="settings_news_section_music_value" translatable="false">music/music</string>
+    <string name="settings_news_section_travel_value" translatable="false">travel/travel</string>
+    <string name="settings_news_section_culture_value" translatable="false">culture/culture</string>
+    <string name="settings_news_section_education_value" translatable="false">education/education</string>
+    <string name="settings_news_section_opinion_value" translatable="false">commentisfree/commentisfree</string>
+    <string name="settings_news_section_stage_value" translatable="false">stage/stage</string>
 
     <string name="settings_min_magnitude_label">Minimum Magnitude</string>
     <string name="settings_min_magnitude_key" translatable="false">min_magnitude</string>

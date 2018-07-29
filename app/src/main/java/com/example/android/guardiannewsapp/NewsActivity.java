@@ -11,6 +11,7 @@ import android.net.Uri;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -35,7 +36,7 @@ public class NewsActivity extends AppCompatActivity
     private static final String GUARDIAN_REQUEST_URL =
 
            // "https://content.guardianapis.com/search?q=arts&from-date=2018-05-01&order-by=relevance&show-tags=contributor&api-key=e645d915-0452-42bf-8709-535c74471ce5";
-            "https://content.guardianapis.com/search?q=arts&show-tags=contributor&api-key=e645d915-0452-42bf-8709-535c74471ce5";
+            "https://content.guardianapis.com/search?q=arts%20AND%20NOT%20dark%20arts&show-tags=contributor&api-key=e645d915-0452-42bf-8709-535c74471ce5";
 
 
     /**
@@ -138,7 +139,7 @@ public class NewsActivity extends AppCompatActivity
        SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
 
        // getString retrieves a String value from the preferences. The second parameter is the default value for this preference.
-       String sectionId = sharedPrefs.getString(
+       String sectionTag = sharedPrefs.getString(
                getString(R.string.settings_news_section_key),
                getString(R.string.settings_news_section_default_value));
 
@@ -156,9 +157,14 @@ public class NewsActivity extends AppCompatActivity
 
        // Append query parameter and its value. For example, the `format=geojson`
 
-       uriBuilder.appendQueryParameter("sectionId", sectionId);
-       uriBuilder.appendQueryParameter("order-by", orderBy);
+       uriBuilder.appendQueryParameter("tag", sectionTag);
+       Log.i("NewsActivity", "sectionId is " + sectionTag);
 
+
+       uriBuilder.appendQueryParameter("order-by", orderBy);
+       Log.i("NewsActivity", "order-by is " + orderBy);
+
+       Log.i("NewsActivity", "URI is " + uriBuilder.toString());
 
 
        // Return the completed uri `http://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&limit=10&minmag=minMagnitude&orderby=time
