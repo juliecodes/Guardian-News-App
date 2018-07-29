@@ -31,12 +31,7 @@
         android:title="@string/settings_news_section_label" />
 
 
-   <!-- <EditTextPreference
-        android:defaultValue="@string/settings_news_section_default_key"
-        android:key="@string/settings_news_section_key"
-        android:selectAllOnFocus="true"
-        android:title="@string/settings_news_section_label" />
-        -->
+
 
 
 
