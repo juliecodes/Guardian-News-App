@@ -156,9 +156,15 @@ public class NewsActivity extends AppCompatActivity
        Uri.Builder uriBuilder = baseUri.buildUpon();
 
        // Append query parameter and its value. For example, the `format=geojson`
+if (sectionTag.isEmpty()) {
+    //do nothing
+    Log.i("NewsActivity", "no sectionTag is mentioned (ALL is default) ");
 
-       uriBuilder.appendQueryParameter("tag", sectionTag);
-       Log.i("NewsActivity", "sectionId is " + sectionTag);
+} else {
+    uriBuilder.appendQueryParameter("tag", sectionTag);
+    Log.i("NewsActivity", "sectionTag is " + sectionTag);
+
+}
 
 
        uriBuilder.appendQueryParameter("order-by", orderBy);

@@ -15,6 +15,7 @@
 
 <string-array name="settings_news_section_options_labels">
     <item>@string/settings_news_section_default_label</item>
+    <item>@string/settings_news_section_arts_label</item>
     <item>@string/settings_news_section_music_label</item>
     <item>@string/settings_news_section_travel_label</item>
     <item>@string/settings_news_section_culture_label</item>
@@ -26,6 +27,7 @@
 
 <string-array name="settings_news_section_options_values">
     <item>@string/settings_news_section_default_value</item>
+    <item>@string/settings_news_section_arts_value</item>
     <item>@string/settings_news_section_music_value</item>
     <item>@string/settings_news_section_travel_value</item>
     <item>@string/settings_news_section_culture_value</item>

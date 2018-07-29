@@ -1,7 +1,7 @@
 <resources>
 
     <!-- Title for the application. [CHAR LIMIT=12] -->
-    <string name="app_name">GuardianNewsApp</string>
+    <string name="app_name">Guardian News Arts</string>
 
 
     <!-- Text to display in the list when there is no news [CHAR LIMIT=NONE] -->
@@ -18,7 +18,9 @@
     <string name="settings_news_section_key" translatable="false">news_section</string>
 
     <!-- These go in the settings_main menu that shows each section as options for news section -->
-    <string name="settings_news_section_default_label">Art and Design</string>
+    <string name="settings_news_section_default_label">All</string>
+    <string name="settings_news_section_arts_label">Art and Design</string>
+
     <string name="settings_news_section_music_label">Music</string>
     <string name="settings_news_section_travel_label">Travel</string>
     <string name="settings_news_section_culture_label">Culture</string>
@@ -26,7 +28,10 @@
     <string name="settings_news_section_opinion_label">Opinion</string>
     <string name="settings_news_section_stage_label">Stage</string>
 
-    <string name="settings_news_section_default_value" translatable="false">artanddesign/artanddesign</string>
+    <string name="settings_news_section_default_value" translatable="false"></string>
+
+    <string name="settings_news_section_arts_value" translatable="false">artanddesign/artanddesign</string>
+
     <string name="settings_news_section_music_value" translatable="false">music/music</string>
     <string name="settings_news_section_travel_value" translatable="false">travel/travel</string>
     <string name="settings_news_section_culture_value" translatable="false">culture/culture</string>
