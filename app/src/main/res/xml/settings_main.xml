@@ -16,11 +16,28 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/settings_title">
 
-    <EditTextPreference
-        android:defaultValue="@string/settings_min_magnitude_default"
-        android:inputType="numberDecimal"
-        android:key="@string/settings_min_magnitude_key"
+    <ListPreference
+        android:defaultValue="@string/settings_order_by_default"
+        android:entries="@array/settings_order_by_labels"
+        android:entryValues="@array/settings_order_by_values"
+        android:key="@string/settings_order_by_key"
+        android:title="@string/settings_order_by_label" />
+
+    <ListPreference
+        android:defaultValue="@string/settings_news_section_default_value"
+        android:entries="@array/settings_news_section_options_labels"
+        android:entryValues="@array/settings_news_section_options_values"
+        android:key="@string/settings_news_section_key"
+        android:title="@string/settings_news_section_label" />
+
+
+   <!-- <EditTextPreference
+        android:defaultValue="@string/settings_news_section_default_key"
+        android:key="@string/settings_news_section_key"
         android:selectAllOnFocus="true"
-        android:title="@string/settings_min_magnitude_label" />
+        android:title="@string/settings_news_section_label" />
+        -->
+
+
 
 </PreferenceScreen>

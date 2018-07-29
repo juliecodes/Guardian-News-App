@@ -26,19 +26,33 @@
     <string name="settings_news_section_opinion_label">Opinion</string>
     <string name="settings_news_section_stage_label">Stage</string>
 
-    <string name="settings_news_section_default_key" translatable="false">artanddesign</string>
-    <string name="settings_news_section_music_key" translatable="false">music</string>
-    <string name="settings_news_section_travel_key" translatable="false">travel</string>
-    <string name="settings_news_section_culture_key" translatable="false">culture</string>
-    <string name="settings_news_section_education_key" translatable="false">education</string>
-    <string name="settings_news_section_opinion_key" translatable="false">commentisfree</string>
-    <string name="settings_news_section_stage_key" translatable="false">stage</string>
+    <string name="settings_news_section_default_value" translatable="false">artanddesign</string>
+    <string name="settings_news_section_music_value" translatable="false">music</string>
+    <string name="settings_news_section_travel_value" translatable="false">travel</string>
+    <string name="settings_news_section_culture_value" translatable="false">culture</string>
+    <string name="settings_news_section_education_value" translatable="false">education</string>
+    <string name="settings_news_section_opinion_value" translatable="false">commentisfree</string>
+    <string name="settings_news_section_stage_value" translatable="false">stage</string>
 
     <string name="settings_min_magnitude_label">Minimum Magnitude</string>
     <string name="settings_min_magnitude_key" translatable="false">min_magnitude</string>
     <string name="settings_min_magnitude_default" translatable="false">0</string>
 
 
+
+    <!-- Strings For Order-By Preference [CHAR LIMIT=30] -->
+    <string name="settings_order_by_label">Order By</string>
+    <string name="settings_order_by_key" translatable="false">order_by</string>
+    <string name="settings_order_by_default" translatable="false">@string/settings_order_by_relevance_value</string>
+
+
+    <!-- Label for order-by most recent option [CHAR LIMIT=20] -->
+    <string name="settings_order_by_most_recent_label">Most Recent</string>
+    <string name="settings_order_by_most_recent_value" translatable="false">newest</string>
+
+    <!-- Label for order-by most recent option [CHAR LIMIT=20] -->
+    <string name="settings_order_by_relevance_label">Relevance</string>
+    <string name="settings_order_by_relevance_value" translatable="false">relevance</string>
 
 
 </resources>

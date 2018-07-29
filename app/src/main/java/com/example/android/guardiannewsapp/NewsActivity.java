@@ -140,7 +140,13 @@ public class NewsActivity extends AppCompatActivity
        // getString retrieves a String value from the preferences. The second parameter is the default value for this preference.
        String sectionId = sharedPrefs.getString(
                getString(R.string.settings_news_section_key),
-               getString(R.string.settings_news_section_default_key));
+               getString(R.string.settings_news_section_default_value));
+
+
+       String orderBy = sharedPrefs.getString(
+               getString(R.string.settings_order_by_key),
+               getString(R.string.settings_order_by_default)
+       );
 
        // parse breaks apart the URI string that's passed into its parameter
        Uri baseUri = Uri.parse(GUARDIAN_REQUEST_URL);
@@ -151,9 +157,8 @@ public class NewsActivity extends AppCompatActivity
        // Append query parameter and its value. For example, the `format=geojson`
 
        uriBuilder.appendQueryParameter("sectionId", sectionId);
-       uriBuilder.appendQueryParameter("order-by", "newest");
-       uriBuilder.appendQueryParameter("order-by", "oldest");
-       uriBuilder.appendQueryParameter("order-by", "relevance");
+       uriBuilder.appendQueryParameter("order-by", orderBy);
+
 
 
        // Return the completed uri `http://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&limit=10&minmag=minMagnitude&orderby=time
