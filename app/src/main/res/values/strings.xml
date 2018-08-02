@@ -20,13 +20,13 @@
     <!-- These go in the settings_main menu that shows each section as options for news section -->
     <string name="settings_news_section_default_label">All</string>
     <string name="settings_news_section_arts_label">Art and Design</string>
-
     <string name="settings_news_section_music_label">Music</string>
     <string name="settings_news_section_travel_label">Travel</string>
     <string name="settings_news_section_culture_label">Culture</string>
     <string name="settings_news_section_education_label">Education</string>
     <string name="settings_news_section_opinion_label">Opinion</string>
     <string name="settings_news_section_stage_label">Stage</string>
+    <string name="settings_news_section_tvradio_label">TV and Radio</string>
 
     <string name="settings_news_section_default_value" translatable="false"></string>
 
@@ -38,11 +38,7 @@
     <string name="settings_news_section_education_value" translatable="false">education/education</string>
     <string name="settings_news_section_opinion_value" translatable="false">commentisfree/commentisfree</string>
     <string name="settings_news_section_stage_value" translatable="false">stage/stage</string>
-
-    <string name="settings_min_magnitude_label">Minimum Magnitude</string>
-    <string name="settings_min_magnitude_key" translatable="false">min_magnitude</string>
-    <string name="settings_min_magnitude_default" translatable="false">0</string>
-
+    <string name="settings_news_section_tvradio_value">tv-and-radio/tv-and-radio</string>
 
     <!-- Strings For Order-By Preference [CHAR LIMIT=30] -->
     <string name="settings_order_by_label">Order By</string>

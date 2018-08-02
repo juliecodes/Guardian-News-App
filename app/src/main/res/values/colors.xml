@@ -47,4 +47,7 @@
     <!-- Color for a news item in the news section 7 -->
     <color name="newsSectionColor7">#26a69a</color>
 
+    <!-- Color for a news item in the news section 8 -->
+    <color name="newsSectionColor8">#303f9f</color>
+
 </resources>
