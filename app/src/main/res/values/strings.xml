@@ -3,7 +3,6 @@
     <!-- Title for the application. [CHAR LIMIT=12] -->
     <string name="app_name">Guardian News Arts</string>
 
-
     <!-- Text to display in the list when there is no news [CHAR LIMIT=NONE] -->
     <string name="no_news_found">No news found.</string>
 
@@ -12,7 +11,6 @@
 
     <string name="settings_menu_item">Settings</string>
     <string name="settings_title">News Settings</string>
-
 
     <string name="settings_news_section_label">News Section</string>
     <string name="settings_news_section_key" translatable="false">news_section</string>
