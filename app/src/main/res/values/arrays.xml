@@ -10,7 +10,6 @@
 <string-array name="settings_order_by_values">
     <item>@string/settings_order_by_relevance_value</item>
     <item>@string/settings_order_by_most_recent_value</item>
-
 </string-array>
 
 <string-array name="settings_news_section_options_labels">
@@ -29,7 +28,5 @@
     <item>@string/settings_news_section_music_value</item>
     <item>@string/settings_news_section_stage_value</item>
     <item>@string/settings_news_section_tvradio_value</item>
-
-
 </string-array>
 </resources>
