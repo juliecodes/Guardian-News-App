@@ -30,9 +30,4 @@
         android:key="@string/settings_news_section_key"
         android:title="@string/settings_news_section_label" />
 
-
-
-
-
-
 </PreferenceScreen>

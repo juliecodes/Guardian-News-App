@@ -44,7 +44,6 @@
     <string name="settings_min_magnitude_default" translatable="false">0</string>
 
 
-
     <!-- Strings For Order-By Preference [CHAR LIMIT=30] -->
     <string name="settings_order_by_label">Order By</string>
     <string name="settings_order_by_key" translatable="false">order_by</string>
